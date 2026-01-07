@@ -1,0 +1,18 @@
+{
+  "name": "@tutless/kons-package",
+  "version": "1.0.0",
+  "description": "sharing package across nestjs and non nestjs framework requires mongoose document inputs compromise protobuf data structure",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "author": "tutless",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
