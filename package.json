@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "sharing package across nestjs and non nestjs framework requires mongoose document inputs compromise protobuf data structure",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -13,6 +15,12 @@
   "author": "tutless",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^25.0.3",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "mongoose": "^9.1.2",
+    "rxjs": "^7.8.2"
   }
 }
