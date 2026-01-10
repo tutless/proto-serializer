@@ -52,7 +52,7 @@ export class GenericDtoSerializer<T,U=T>{
 
 
     rawToModelTranformer(){
-       return iif(() => this.serializerArgs.targetInput != undefined, this.genericOutputModelTransformer(),this.genericInputModelTransformer())
+       return iif(() => this.serializerArgs.targetInput == undefined, this.genericOutputModelTransformer(),this.genericInputModelTransformer())
        .pipe(map(finalOutputDto => this.serializerArgs.transformOutput(this.serializerArgs.targetOuput,finalOutputDto)))
     }
 
