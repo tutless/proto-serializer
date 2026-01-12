@@ -40,12 +40,12 @@ export type GenericTransformerType<T,U=T> = {
             const {dataRecord,targetOutput,transformOutput,labelKey} = serializerArgs
             return of(dataRecord).pipe(map(dt => {
                 return transformOutput(targetOutput, dt);
-            }),tap(conversion => console.log("Target transformation Output result", conversion)),map(dataModel => {
+            }),map(dataModel => {
                 return {
                     ...dataModel,
                     ...dataRecord[labelKey]
                 } as Record<string,any>
-            }))
+            }),tap(conversion => console.log("Target transformation Output result", conversion)))
     }
 
 
