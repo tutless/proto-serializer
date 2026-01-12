@@ -3,7 +3,7 @@ import { iif, map, of, tap } from 'rxjs';
 
 //U=T is an optional for type U
 
-export type GenericTransformerType<T,U> = {
+export type GenericTransformerType<T,U=T> = {
      dataRecord:Record<string,any>,
      targetOuput:ClassConstructor<T>,
      targetInput?:ClassConstructor<U>,
@@ -49,7 +49,7 @@ export type GenericTransformerType<T,U> = {
     }
 
 
-    export const rawToModelTranformer = <T,U>(serializerArgs:GenericTransformerType<T,U>) => {
+    export const rawToModelTransformer = <T,U=T>(serializerArgs:GenericTransformerType<T,U>) => {
        return iif(() => serializerArgs.targetInput == null, genericOutputModelTransformer(serializerArgs),genericInputModelTransformer(serializerArgs))
        .pipe(map(finalOutputDto => serializerArgs.transformOutput(serializerArgs.targetOuput,finalOutputDto)))
     }
