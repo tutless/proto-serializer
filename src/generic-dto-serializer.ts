@@ -3,7 +3,7 @@ import { iif, map, of, tap } from 'rxjs';
 
 //U=T is an optional for type U
 
-export type GenericTransformerType<T,U=T> = {
+export interface GenericTransformerType<T,U=T>  {
      dataRecord:Record<string,any>,
      targetOutput:ClassConstructor<T>,
      targetInput?:ClassConstructor<U>,
