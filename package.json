@@ -1,6 +1,6 @@
 {
   "name": "@tutless/proto-serializer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sharing package across nestjs and non nestjs framework requires mongoose document inputs compromise protobuf data structure",
   "main": "dist/index.js",
   "type": "module",
